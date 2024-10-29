@@ -2,15 +2,15 @@ package converter
 
 import "encoding/json"
 
-typre VideoConverter struct{}
+type VideoConverter struct{}
 
-type VideoTask struct{
-	videoID int `json:"video_id"`
-	Path string `json: "path"`
+type VideoTask struct {
+	videoID int    `json:"video_id"`
+	Path    string `json: "path"`
 }
 
 func (vc *VideoConverter) Handle(msg []byte) {
-	var task VideoTask 
+	var task VideoTask
 	err := json.Unmarshal(msg, &task)
 	if err != nil {
 		panic(err)

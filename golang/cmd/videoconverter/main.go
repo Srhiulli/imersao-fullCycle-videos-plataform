@@ -34,4 +34,18 @@ func mergeChunks(inputDir, outputFile string) error {
 	if err != nil {
 		return fmt.Errorf("failed to create output file: %v", err)
 	}
+	defer output.Close()
+
+	for _, chunk := range chunks {
+		input, err := os.Open(chunk) //pega o valor do chunk
+		if err != nill {
+			return ftm.Errorf("failed to open chunk: %v", err)
+		}
+		_, err = output.ReadFrom(input) // joga o valor do chunk para o output
+		ir err != nil {
+			return fmt.Errorf("failed to write chunk %s to merged file: %v", chunk, err)
+		}
+		input.Close()
+	}
+	return nil //se retornar nill, quer dizer que não teve erro
 }

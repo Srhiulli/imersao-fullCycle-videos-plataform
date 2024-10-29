@@ -11,7 +11,7 @@ type VideoTask struct{
 
 func (vc *VideoConverter) Handle(msg []byte) {
 	var task VideoTask 
-	err := json.Un[marshal(msg, &task)
+	err := json.Unmarshal(msg, &task)
 	if err != nil {
 		panic(err)
 	}

@@ -1,16 +1,24 @@
 package converter
 
 import (
+	"context"
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"log/slog"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
+	"sort"
+	"strconv"
 	"time"
+	// "imersaofc/pkg/rabbitmq"
+	// "github.com/streadway/amqp"
 )
 
 type VideoConverter struct{}
+
 
 type VideoTask struct {
 	videoID int    `json:"video_id"`

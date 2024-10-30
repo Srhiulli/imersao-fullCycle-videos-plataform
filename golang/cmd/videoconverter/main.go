@@ -1,10 +1,23 @@
 package main
 
 import (
+	"context"
+	"database/sql"
 	"fmt"
-	"path/filepath"
-	"regexp"
-	"strconv"
+	"log/slog"
+	"os"
+	"os/signal"
+	"sync"
+	"syscall"
+
+	// "imersaofc/internal/converter"
+	// "imersaofc/pkg/log"
+	// "imersaofc/pkg/rabbitmq"
+
+	// "imersaofc/pkg/rabbitmq"
+
+	// _ "github.com/lib/pq"
+	// "github.com/streadway/amqp"
 )
 
 func main() {
